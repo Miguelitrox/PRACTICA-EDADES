@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MAYOR30</title>
+</head>
+<br><br>
+<button onclick="window.location.href='ejercicio3.html'">REGRESAR A LA PÁGINA PRINCIPAL</button>
+<body>
+    <h1>Eres mayor de edad.</h1>
+    <p>¡Felicidades! Puedes acceder a contenido exclusivo.</p>
+
+    <!-- IMAGEN PARA MUJER -->
+    <img id="img-brunch"
+         src="C:\Users\cesar\OneDrive\Dokumente\PRACTICA3\IMAGEN_BRUNCH.gif"
+         alt="Brunch"
+         width="400"
+         align="center"
+         hidden>
+
+    <!-- IMAGEN PARA HOMBRE -->
+    <img id="img-gym"
+         src="C:\Users\cesar\OneDrive\Dokumente\PRACTICA3\IMAGEN_GYM.gif"
+         alt="Gym"
+         width="400"
+         align="center"
+         hidden>
+
+    <script>
+        let sexo = new URLSearchParams(window.location.search).get("sexo");
+
+        if (sexo === "mujer") {
+            document.getElementById("img-brunch").hidden = false;
+        } else if (sexo === "hombre") {
+            document.getElementById("img-gym").hidden = false;
+        }
+    </script>
+</body>
+</html>

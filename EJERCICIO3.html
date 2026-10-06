@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>EJERCICIO3</title>
+    <style>
+        body {
+            background-color: #F0F8FF;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <form id="formulario" method="get">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="edad">Edad:</label><br>
+            <input type="number" id="edad" name="edad" min="0" required><br><br>
+
+            <p>¿Cuál es su sexo?</p>
+            <input type="radio" id="hombre" name="sexo" value="hombre" required>
+            <label for="hombre">Hombre</label><br>
+            <input type="radio" id="mujer" name="sexo" value="mujer" required>
+            <label for="mujer">Mujer</label><br><br>
+
+            <input type="submit" value="Ingresar">
+        </form>
+    </center>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", function () {
+            let edad = parseInt(document.getElementById("edad").value);
+
+            if (edad < 18) {
+                this.action = "MENOR18.html";      // menor de 18
+            } else if (edad < 30) {
+                this.action = "MAYOR18.html";      // de 18 a 30
+            } else {
+                this.action = "MAYOR30.html";      // mas de 30
+            }
+        });
+    </script>
+</body>
+</html>
